@@ -27,4 +27,8 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/uplift-mlops:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/uplift-mlops:latest
 
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl rollout restart deployment uplift-api
+
       

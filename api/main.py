@@ -36,6 +36,7 @@ def p(r: Req):
     return {"uplift": uplift}
 
 
+
 REQUEST_COUNT = Counter("request_count", "Total API Requests")
 REQUEST_LATENCY = Histogram("request_latency_seconds", "Request latency")
 
