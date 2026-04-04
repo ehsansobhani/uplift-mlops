@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/Ehsan/mlops/uplift_mlops_prod/mlruns/1/models/m-dd61aa30571544c89d2a4cff56782a7e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+    skops_trusted_types: null
+mlflow_version: 3.10.1
+model_id: m-dd61aa30571544c89d2a4cff56782a7e
+model_size_bytes: 347457
+model_uuid: m-dd61aa30571544c89d2a4cff56782a7e
+prompts: null
+run_id: a416897d863942f3ae2824164971ccf1
+utc_time_created: '2026-04-03 22:53:29.890308'

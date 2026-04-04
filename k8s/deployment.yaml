@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uplift-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: uplift-api
+  template:
+    metadata:
+      labels:
+        app: uplift-api
+    spec:
+      containers:
+      - name: uplift-api
+        image: jonkoochooloo/uplift-mlops:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
