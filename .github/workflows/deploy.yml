@@ -27,10 +27,4 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/uplift-mlops:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/uplift-mlops:latest
 
-      - name: Set up kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
-
-      - name: Deploy
-        run: kubectl apply -f k8s/
+      
