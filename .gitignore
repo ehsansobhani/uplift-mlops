@@ -1,1 +1,5 @@
+data/
+*.csv
+mlruns/
+
 "data/purchases.csv" 
