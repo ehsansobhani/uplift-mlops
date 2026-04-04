@@ -16,6 +16,114 @@ This project simulates a real-world ML production system:
 * Visualization with Grafana
 
 ---
+## 📊 Dataset
+
+This project uses the **:contentReference[oaicite:0]{index=0}**, a real-world dataset designed for uplift modeling tasks in retail marketing.
+
+### 🧠 Description
+The dataset contains customer-level information including:
+- `client_id` → unique customer identifier  
+- `treatment_flg` → whether the customer received a marketing treatment  
+- `target` → whether the customer made a purchase  
+- Transactional and demographic features  
+
+### 🎯 Objective
+The goal is to estimate **incremental impact (uplift)**:
+> Difference in purchase probability between treated and control groups
+
+---
+
+## 📊 Dataset
+
+This project uses the **X5 RetailHero Uplift Modeling dataset** (Kaggle), a real-world dataset for evaluating marketing campaign effectiveness.
+
+---
+
+### 📁 Files Used
+
+The dataset includes the following key files:
+
+* `clients.csv` → customer-level features (demographics, behavior)
+* `products.csv` → product metadata
+* `uplift_train.csv` → training data with treatment and target labels
+* `uplift_test.csv` → test dataset for inference
+* `uplift_sample_submission.csv` → sample output format
+
+---
+
+### 🧠 Problem Setting
+
+The goal is **uplift modeling**, which estimates:
+
+> The **causal impact** of a treatment (e.g., promotion) on customer behavior
+
+Each customer belongs to:
+
+* **Treatment group** → received marketing action
+* **Control group** → did not receive treatment
+
+---
+
+### 🎯 Objective
+
+Predict the **uplift score**:
+
+```text
+Uplift = P(purchase | treatment) − P(purchase | control)
+```
+
+This allows targeting only customers who are likely to respond positively.
+
+---
+
+### ⚙️ How Data is Used
+
+* `uplift_train.csv` → used to train two models:
+
+  * Treatment model
+  * Control model
+* `clients.csv` → feature enrichment
+* Model artifacts saved as:
+
+  * `model_treat.pkl`
+  * `model_control.pkl`
+
+During inference:
+
+* Input: `client_id`
+* Features are reconstructed
+* Both models generate probabilities
+* Uplift is computed
+
+---
+
+### 📥 Data Access
+
+Due to size limitations, raw data is not fully included.
+
+Download from:
+👉 https://www.kaggle.com/datasets/shonenkov/x5retailheroupliftrawdata
+
+---
+
+### 📁 Expected Directory Structure
+
+```text
+data/
+├── clients.csv
+├── products.csv
+├── uplift_train.csv
+├── uplift_test.csv
+├── uplift_sample_submission.csv
+```
+
+---
+
+### ⚠️ Notes
+
+* A subset or processed version may be included for testing
+* Full dataset is required for training pipeline reproduction
+
 
 # 🧠 Model
 
