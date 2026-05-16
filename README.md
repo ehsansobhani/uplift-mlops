@@ -18,7 +18,7 @@ This project simulates a real-world ML production system:
 ---
 ## 📊 Dataset
 
-This project uses the **:contentReference[oaicite:0]{index=0}**, a real-world dataset designed for uplift modeling tasks in retail marketing.
+This project uses the a real-world dataset designed for uplift modeling tasks in retail marketing.
 
 ### 🧠 Description
 The dataset contains customer-level information including:
